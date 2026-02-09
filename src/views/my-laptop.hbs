@@ -76,7 +76,7 @@
         </div>
     </div>
     <!-- Hasil Form -->
-    <div class="container mt-5 {{#unless laptopData.length }}d-none{{/unless}}" id="sectionHasil">
+    <div class="container mt-5 {{#unless result.rows.length }}d-none{{/unless}}" id="sectionHasil">
         <h1 class="text-center mb-5">My Laptop</h1>
         {{!-- <div class="d-flex justify-content-center mb-4">
             <select id="filterKondisi" class="mt-4 shadow-sm text-center" aria-label="Default select example">
@@ -87,21 +87,24 @@
             </select>
         </div> --}}
         <div id="hasil" class="row mb-3">
-        {{#each laptopData}}
+        {{#each result.rows}}
             <div class="col d-flex justify-content-center mb-4">
                 <div class="card shadow-lg" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">{{namaLaptop}}</h5>
-                        <p class="card-text">Tanggal Beli: {{tanggalBeli}}</p>
+                        <h5 class="card-title">{{nama}}</h5>
+                        <p class="card-text">Tanggal Beli: {{tanggal_rapi}}</p>
                         <p class="card-text">{{deskripsi}}.</p>
                         <div class="d-flex align-items-center gap-4 justify-content-center mb-3">
-                            {{#if kondisi.monitorBagus}}<i class="bi bi-display fs-2"></i>{{/if}}
-                            {{#if kondisi.keyboardBagus}}<i class="bi bi-keyboard fs-4"></i>{{/if}}
-                            {{#if kondisi.casingBagus}}<i class="bi bi-laptop fs-2"></i>{{/if}}
+                            {{#if monitor_bagus}}<i class="bi bi-display fs-2"></i>{{/if}}
+                            {{#if keyboard_bagus}}<i class="bi bi-keyboard fs-4"></i>{{/if}}
+                            {{#if casing_bagus}}<i class="bi bi-laptop fs-2"></i>{{/if}}
                         </div >
                         <div class="row">
                             <div class="col">
-                                <form action="/my-laptop/{{id}}" method="post">
+                                <a href="/my-laptop/edit/{{id}}"><button type="submit" class="btn btn-dark w-100">Edit</button></a>
+                            </div>
+                            <div class="col">
+                                <form action="/my-laptop/delete/{{id}}" method="post" onsubmit="return confirm('Apakah anda yakin ingin menghapus laptop ini?');">
                                     <button type="submit" class="btn btn-dark w-100">Delete</button>
                                 </form>
                             </div>
