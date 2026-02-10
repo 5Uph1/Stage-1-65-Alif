@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Laptop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+
+</head>
+<body>
+    <div class="container-fluid bg-light pb-5">
+        <!-- Formulir Login -->
+        <div class="row align-items-start justify-content-center">
+            <div class="col-4">
+                <h1 class="text-center p-5 fw-bold">Login</h1>
+                <form id="account" method="POST" action="/login">
+                    <div class="mb-4">
+                        <label for="email" class="form-label fw-semibold">Email</label>
+                        <input type="text" class="form-control shadow-sm" id="email" name="email" placeholder="Masukkan Email Anda" autocomplete="off" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label fw-semibold">Password</label>
+                        <input type="password" class="form-control shadow-sm" id="password" name="password" placeholder="Masukkan Password Anda" autocomplete="off" required>
+                    </div>
+                    <div class="mb-4">
+                        <p class="form-label fw-semibold">Belum punya akun? <a href="/register">sign up</a></p>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-dark px-4 rounded rounded-pill">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    {{!-- <script src="assets/scripts/addLaptop.js"></script> --}}
+</body>
+</html>

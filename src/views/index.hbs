@@ -20,9 +20,16 @@
                     <li class="nav-item">
                         <a class="nav-link fw-bold active" aria-current="page" href="/">Home</a>
                     </li>
+                    {{#if nama}}
                     <li class="nav-item">
                         <a class="nav-link fw-semibold" href="my-laptop">My Laptop</a>
                     </li>
+                    {{/if}}
+                    {{#if nama}}
+                    <li class="nav-item">
+                        <p class="nav-link fw-bold active">Hy {{nama}}</p>
+                    </li>
+                    {{/if}}
                     <li class="nav-item ms-auto">
                         <a href="contact-us"><button type="button" class="btn btn-dark fw-semibold px-3">Contact Us</button></a>
                     </li>
