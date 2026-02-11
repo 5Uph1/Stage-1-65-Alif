@@ -24,6 +24,9 @@
                         <a class="nav-link fw-bold active" href="../../my-laptop">My Laptop</a>
                     </li>
                     <li class="nav-item ms-auto">
+                        <a class="nav-link fw-semibold" href="/logout">Logout</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="../../contact-us"><button type="button" class="btn btn-dark fw-semibold px-3">Contact Us</button></a>
                     </li>
                 </ul>
@@ -36,7 +39,7 @@
             <div class="col-4">
                 <h1 class="text-center p-5 fw-bold">EDIT MY LAPTOP</h1>
                 {{#each result.rows}}
-                <form id="myLaptop" method="POST" action="/my-laptop/update">
+                <form id="myLaptop" method="POST" action="/my-laptop/update" enctype="multipart/form-data">
                 <input type="text" name="id" value="{{id}}" hidden>
                     <div class="mb-4">
                         <label for="namaLaptop" class="form-label fw-semibold">Nama Laptop</label>
@@ -68,7 +71,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="formFile" class="form-label fw-semibold">Gambar Laptop</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" type="file" id="formFile" name="upload" required>
                     </div>
                     <div class="text-end">
                         <button type="submit" class="btn btn-dark px-4 rounded rounded-pill">Submit</button>

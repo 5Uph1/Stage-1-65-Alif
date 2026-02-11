@@ -24,6 +24,9 @@
                         <a class="nav-link fw-bold active" href="my-laptop">My Laptop</a>
                     </li>
                     <li class="nav-item ms-auto">
+                        <a class="nav-link fw-semibold" href="/logout">Logout</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="contact-us"><button type="button" class="btn btn-dark fw-semibold px-3">Contact Us</button></a>
                     </li>
                 </ul>
@@ -35,7 +38,7 @@
         <div class="row align-items-start justify-content-center">
             <div class="col-4">
                 <h1 class="text-center p-5 fw-bold">ADD MY LAPTOP</h1>
-                <form id="myLaptop" method="POST" action="/my-laptop">
+                <form id="myLaptop" method="POST" action="/my-laptop" enctype="multipart/form-data">
                     <div class="mb-4">
                         <label for="namaLaptop" class="form-label fw-semibold">Nama Laptop</label>
                         <input type="text" class="form-control shadow-sm" id="namaLaptop" name="namaLaptop" placeholder="Masukkan Nama Laptop" autocomplete="off" required>
@@ -66,7 +69,7 @@
                     </div>
                     <div class="mb-4">
                         <label for="formFile" class="form-label fw-semibold">Gambar Laptop</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" type="file" id="formFile" name="upload" required>
                     </div>
                     <div class="text-end">
                         <button type="submit" class="btn btn-dark px-4 rounded rounded-pill">Submit</button>
@@ -91,9 +94,12 @@
             <div class="col d-flex justify-content-center mb-4">
                 <div class="card shadow-lg" style="width: 18rem;">
                     <div class="card-body">
+                        {{#if gambar }}
+                        <img src="./assets/images/uploads/{{gambar}}" class="card-img-top" alt="Gambar Laptop" height="150rem">
+                        {{/if}}
                         <h5 class="card-title">{{nama}}</h5>
                         <p class="card-text">Tanggal Beli: {{tanggal_rapi}}</p>
-                        <p class="card-text">{{deskripsi}}.</p>
+                        <p class="card-text">{{deskripsi}}</p>
                         <div class="d-flex align-items-center gap-4 justify-content-center mb-3">
                             {{#if monitor_bagus}}<i class="bi bi-display fs-2"></i>{{/if}}
                             {{#if keyboard_bagus}}<i class="bi bi-keyboard fs-4"></i>{{/if}}
